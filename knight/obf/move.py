@@ -21,21 +21,19 @@ def go_around(board, knight, track):
 
     possible_moves = find_possible_moves(board, knight)
 
-    for next_sq in possible_moves:
-        x, y = next_sq
+    for move in possible_moves:
+        board.squares[move[1]][move[0]] = 1
+        track.append(move)
 
-        board.squares[y][x] = 1
-        track.append([x, y])
-
-        old_square = knight.square
-        knight.square = [x, y]
+        pre_move = knight.square
+        knight.square = move
 
         result = go_around(board, knight, track)
         if result:
             return result
 
-        knight.square = old_square
+        knight.square = pre_move
         track.pop()
-        board.squares[y][x] = 0
+        board.squares[move[1]][move[0]] = 0
 
     return None

@@ -6,5 +6,5 @@ def print_tour(track):
     for i in range(8):
         line = ""
         for j in range(8):
-            line += str(board[i][j]) + "\t|"
-        print(line + "\n")
+            line += str(board[i][j]) + "\t"
+        print(line)
