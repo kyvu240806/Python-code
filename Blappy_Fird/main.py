@@ -69,7 +69,7 @@ def reset_game():
     bird_y = HEIGHT // 2
     bird_velocity = 0
     pole_x = WIDTH
-    pole_height = random.randint(120, 360)
+    pole_height = random.randint(100, 360)
     score = 0
     passed = False
 
@@ -106,7 +106,7 @@ while running:
     pole_x -= pole_speed
     if pole_x < -pole_img.get_width():
         pole_x = WIDTH
-        pole_height = random.randint(120, 480)
+        pole_height = random.randint(100, 360)
         passed = False
 
     # -------- HITBOX --------
